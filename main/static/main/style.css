@@ -1,0 +1,88 @@
+*,
+html,
+body {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Abel", sans-serif;
+  background-color: #f1f1f1;
+}
+#container {
+  height: inherit;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 0.25fr 1fr 1fr 0.25fr;
+}
+#header {
+  grid-column: 1/-1;
+  background-color: #e59f26;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#methods {
+  grid-column: span 2;
+  grid-row: span 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px 0px 0px 16px;
+  border-radius: 6px;
+  box-shadow: 6px 6px #e6e6e6;
+}
+#html-editor {
+  grid-column: span 5;
+  grid-row: span 2;
+  border: 2px solid white;
+  border-radius: 6px;
+  box-shadow: 6px 6px #e6e6e6;
+  margin: 16px;
+}
+#html-output {
+  background-color: white;
+  grid-column: span 5;
+  grid-row: span 2;
+  border: 2px solid white;
+  border-radius: 6px;
+  box-shadow: 6px 6px #e6e6e6;
+  margin: 16px;
+}
+#instructions {
+  grid-column: span 2;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 6px;
+  box-shadow: 6px 6px #e6e6e6;
+  margin: 16px 0px 16px 16px;
+}
+#footer {
+  grid-column: 1/-1;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer > a {
+  cursor: pointer;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+#methods > a {
+  flex-grow: 1;
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+  font-family: "Abel", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

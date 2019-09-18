@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Html editor</title>
+    <link rel="shortcut icon" type="image/x-icon" href={% static "main/favicon.ico" %} 
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel&display=swap"
+      rel="stylesheet"
+    />
+    <!--Css imports-->
+    <link rel="stylesheet" href={% static "main/style.css" %} /> 
+    <link rel="stylesheet" href={% static "main/lib/codemirror.css" %} /> 
+    <link rel="stylesheet" href={% static "main/addon/hint/show-hint.css" %} /> 
+    <link rel="stylesheet" href={% static "main/theme/elegant.css" %} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <!--Js imports-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src={% static "main/js/cookie_csrf.js"%}></script>
+    <script src={% static "main/lib/codemirror.js" %}></script>
+    <script src={% static "main/mode/xml/xml.js" %}></script>
+    <script src={% static "main/mode/htmlmixed/htmlmixed.js" %}></script>
+    <script src={% static "main/mode/css/css.js" %}></script>
+    <script src={% static "main/addon/hint/show-hint.js" %}></script>
+    <script src={% static "main/addon/hint/css-hint.js" %}></script>
+    <script src={% static "main/addon/edit/closetag.js" %}></script>
+    <script src={% static "main/addon/edit/matchbrackets.js" %}></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <i class="fas fa-code" style="font-size: 48px"></i>
+        <p style="font-size: 24px; padding-left: 12px;">LIVE HTML EDITOR</p>
+      </div>
+      <div id="methods">
+        <a
+          href="#"
+          id="save"
+          style="background-color: indianred; border-radius: 6px 6px 0px 0px;"
+          >Save and run</a
+        >
+        <a
+          href="#"
+          style="background-color: lightblue; border-radius: 0px 0px 6px 6px;"
+          >Fetch</a
+        >
+      </div>
+      <div id="html-editor">
+        <textarea id="myTextarea"></textarea>
+      </div>
+      <div id="html-output"></div>
+      <div id="instructions">Instruction card</div>
+      <div id="footer">
+        <a href="https://github.com/yayjk/" target="_blank">
+          <i
+            class="fab fa-github"
+            style="font-size: 36px; padding-right: 8px;"
+          ></i>
+          <p>Source Code Here</p>
+        </a>
+      </div>
+    </div>
+    <script>
+      var editor = CodeMirror.fromTextArea(myTextarea, {
+        mode: "htmlmixed",
+        lineNumbers: true,
+        extraKeys: { "Ctrl-Space": "autocomplete" },
+        theme: "elegant",
+        autoCloseTags: true,
+        matchBrackets: true
+      });
+      editor.setSize("100%", "100%");
+    </script>
+    <script src={% static "main/js/method.js"%}></script>
+  </body>
+</html>
