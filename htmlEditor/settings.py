@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'htmlEditor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'htmlEditor',
         'USER': 'root',
         'PASSWORD': 'yayjk',
