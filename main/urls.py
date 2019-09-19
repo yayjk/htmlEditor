@@ -23,4 +23,5 @@ app_name = "main"
 urlpatterns = [
     url(r'^save_to_db/', save_to_db),
     path("", views.homepage, name="homepage"),
+    path("fetch", views.fetchpage, name="fetchpage")
 ]

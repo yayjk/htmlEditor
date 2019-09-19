@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Time of execution</th>
+        <th>Count</th>
+    </tr>
+    {% for entry in codeDb reversed%}
+    <tr>
+        <td>{{entry.the_code}}</td>
+        <td>{{entry.time_of_execution}}</td>
+        <td>{{entry.count}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<style>
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+</style>
